@@ -1,0 +1,64 @@
+  <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recipe Finder</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Recipe Hub</h1>
+      <h3>"Destination and Home to All Recipes"</h3>
+    </header>
+    <main>
+      <section class="search-section">
+        <div class="search-container">
+          <input
+            type="text" id="searchInput" placeholder="Search for recipes by ingredient (e.g., tomato, pasta)"/>
+          <button onclick="searchRecipes()">Search</button>
+          <button class="add-recipe-btn" onclick="openModal()">
+            Add New Recipe
+          </button>
+        </div>
+      </section>
+      <div class="loading" id="loading">
+        <div class="spinner"></div>
+        <p>Searching for delicious recipes...</p>
+      </div>
+      <section class="results-section">
+        <div id="results" class="results-grid"></div>
+      </section>
+    </main>
+    <div id="addRecipeModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2>Add New Recipe</h2>
+        <form id="addRecipeForm">
+          <div class="form-group">
+            <label for="recipeName">Recipe Name:</label>
+            <input type="text" id="recipeName" required />
+          </div>
+          <div class="form-group">
+            <label for="recipeIngredients">Ingredients (one per line):</label>
+            <textarea id="recipeIngredients" required></textarea>
+          </div>
+          <div class="form-group">
+            <label for="recipeInstructions">Instructions:</label>
+            <textarea id="recipeInstructions" required></textarea>
+          </div>
+          <div class="form-group">
+            <label for="recipeImage">Image URL (optional):</label>
+            <input type="url" id="recipeImage" />
+          </div>
+          <button type="submit">Add Recipe</button>
+        </form>
+      </div>
+    </div>
+    <footer>
+      <p>&copy; 2024 Recipe Hub. Your destination for culinary inspiration.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
